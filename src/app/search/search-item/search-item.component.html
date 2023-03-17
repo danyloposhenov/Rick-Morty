@@ -1,0 +1,36 @@
+<div class="container">
+  <a class="nav" [routerLink]="[ '' ]">
+    <img src="assets/arrow-left.svg" alt="">
+    <span>go back</span>
+  </a>
+  <div class="character">
+    <div class="character-item">
+      <img [src]="currentCharacter.image" [alt]="currentCharacter.name">
+    </div>
+    <h2 class="character-name"> {{ currentCharacter.name }} </h2>
+    <h3 class="character-info">Informations</h3>
+    <div class="character-desc">
+      <div class="character-desc box">
+        <h4 class="character-desc-title">Gender</h4>
+        <p class="character-desc-value"> {{ currentCharacter.gender }} </p>
+      </div>
+      <div class="character-desc box">
+        <h4 class="character-desc-title">Status</h4>
+        <p class="character-desc-value"> {{ currentCharacter.status }} </p>
+      </div>
+      <div class="character-desc box">
+        <h4 class="character-desc-title">Specie</h4>
+        <p class="character-desc-value"> {{ currentCharacter.species }} </p>
+      </div>
+      <div class="character-desc box">
+        <h4 class="character-desc-title">Origin</h4>
+        <p class="character-desc-value"> {{ currentCharacter.origin.name == '' ? 'unknown' :
+          currentCharacter.origin.name }} </p>
+      </div>
+      <div class="character-desc box">
+        <h4 class="character-desc-title">Type</h4>
+        <p class="character-desc-value"> {{ currentCharacter.type == '' ? 'unknown' : currentCharacter.type }} </p>
+      </div>
+    </div>
+  </div>
+</div>

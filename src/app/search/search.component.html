@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="logo">
+    <img src="assets/RickY&Morty.png" alt="">
+  </div>
+  <div class="search">
+    <img src="assets/search.svg" class="search-icon" alt="">
+    <input type="text" name="search" class="search-input" placeholder="Filter by name..." (input)="filterCharacters(search)" [(ngModel)]="search">
+  </div>
+  <ul class="list">
+    <li class="list-item" [routerLink]="[ '/search', character.id ]" *ngFor="let character of characters" >
+      <div class="list-item-icon">
+        <img [src]="character.image" alt="">
+      </div>
+      <div class="list-item-info">
+        <h3 class="list-item-name"> {{ character.name }} </h3>
+        <p class="list-item-species"> {{ character.species }} </p>
+      </div>
+    </li>
+  </ul>
+  <button class="load" (click)="loadMore()">More 20</button>
+</div>
